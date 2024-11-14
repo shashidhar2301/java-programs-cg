@@ -1,5 +1,6 @@
 package java8Programs.example;
 
+import java.util.Objects;
 
 public class Employee {
 
@@ -7,6 +8,11 @@ public class Employee {
 	private String name;
 	private String dept;
 	private long salary;
+	
+	
+	public Employee(int id) {
+		this.id=id;
+	}
 
 	public int getId() {
 		return id;
@@ -57,5 +63,24 @@ public class Employee {
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", dept=" + dept + ", salary=" + salary + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		return id == other.id;
+	}
+	
+	
 
 }

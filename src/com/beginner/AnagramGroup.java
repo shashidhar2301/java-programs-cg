@@ -55,7 +55,9 @@ public class AnagramGroup {
 				
 				
 		}
-			System.out.println(map);
+			//System.out.println(map);
+			List<Set<String>> list2 = map.values().stream().toList();
+			System.out.println(list2);
 		 
 			for(Entry e : map.entrySet()) {
 				System.out.println(e.getValue());
